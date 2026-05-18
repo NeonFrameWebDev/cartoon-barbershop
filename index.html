@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Cartoon's Barber Shop | Puerto Penasco, Sonora</title>
+  <meta name="description" content="Barberia tematica en Puerto Penasco. Fades, disenos y barba desde 2019. English Spoken Here. 4.8 estrellas en Google. Abierto lunes a domingo." />
+
+  <!-- Open Graph (BLOCKER 1: og:url uses hyphens; BLOCKER 2: og:image is absolute URL) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://neonframewebdev.github.io/cartoon-barbershop/" />
+  <meta property="og:title" content="Cartoon's Barber Shop | Puerto Penasco, Sonora" />
+  <meta property="og:description" content="Barberia tematica en Puerto Penasco. Fades, disenos, barba. Walk-ins welcome. English Spoken Here." />
+  <meta property="og:image" content="https://neonframewebdev.github.io/cartoon-barbershop/assets/interior_mural_1.jpg" />
+  <meta property="og:locale" content="es_MX" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Card (BLOCKER 2: twitter:image is absolute URL) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cartoon's Barber Shop | Puerto Penasco" />
+  <meta name="twitter:description" content="Barberia tematica en Puerto Penasco. Fades, disenos, barba. English Spoken Here." />
+  <meta name="twitter:image" content="https://neonframewebdev.github.io/cartoon-barbershop/assets/interior_mural_1.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet" />
+
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="assets/interior_mural_1.jpg" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="loading">
+
+  <!-- ── Loader ─────────────────────────────────────────────────────── -->
+  <div id="loader" role="status" aria-label="Cargando / Loading">
+    <img class="loader-logo"
+         src="assets/logo.jpg"
+         alt="Cartoon's Barber Shop logo"
+         width="400" height="288" />
+    <div class="loader-bar-track">
+      <div class="loader-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- ── Nav ───────────────────────────────────────────────────────── -->
+  <nav role="navigation" aria-label="Navegacion principal">
+    <a href="#hero" class="nav-logo" aria-label="Cartoon's Barber Shop inicio">
+      <img src="assets/logo.jpg" alt="" width="auto" height="48" aria-hidden="true" />
+    </a>
+
+    <div class="nav-right">
+      <!-- Nav links (desktop, visible at 768px+) -->
+      <ul class="nav-links" role="list">
+        <li>
+          <a href="#servicios"
+             data-es="Servicios"
+             data-en="Services">Servicios</a>
+        </li>
+        <li>
+          <a href="#equipo"
+             data-es="El Equipo"
+             data-en="The Team">El Equipo</a>
+        </li>
+        <li>
+          <a href="#galeria"
+             data-es="Galeria"
+             data-en="Gallery">Galeria</a>
+        </li>
+        <li>
+          <a href="#contacto"
+             data-es="Contacto"
+             data-en="Contact">Contacto</a>
+        </li>
+      </ul>
+
+      <!-- Language toggle pill -- always visible, never collapses -->
+      <button type="button" class="lang-toggle" data-current="es"
+              aria-label="Switch to English">
+        <span data-pill="es" class="active">
+          <span class="pill-flag" aria-hidden="true">&#127487;&#127485;</span>
+          ES
+        </span>
+        <span data-pill="en">
+          <span class="pill-flag" aria-hidden="true">&#127482;&#127480;</span>
+          EN
+        </span>
+      </button>
+
+      <!-- Phone CTA (desktop) -->
+      <a href="tel:6381287524" class="nav-cta"
+         data-es="Llama ahora"
+         data-en="Call now">Llama ahora</a>
+
+      <!-- Hamburger (mobile / tablet below 768px) -->
+      <button class="nav-hamburger"
+              aria-label="Abrir menu"
+              aria-expanded="false"
+              aria-controls="nav-drawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <nav class="nav-drawer" id="nav-drawer" aria-label="Menu movil">
+    <a href="#servicios"
+       data-es="Servicios"
+       data-en="Services">Servicios</a>
+    <a href="#equipo"
+       data-es="El Equipo"
+       data-en="The Team">El Equipo</a>
+    <a href="#galeria"
+       data-es="Galeria"
+       data-en="Gallery">Galeria</a>
+    <a href="#contacto"
+       data-es="Contacto"
+       data-en="Contact">Contacto</a>
+    <a href="tel:6381287524" class="drawer-cta"
+       data-es="Llama ahora"
+       data-en="Call now">Llama ahora</a>
+  </nav>
+
+  <!-- ── Hero ──────────────────────────────────────────────────────── -->
+  <section id="hero" aria-label="Hero">
+
+    <img class="hero-img"
+         src="assets/interior_mural_1.jpg"
+         alt="Interior de Cartoon's Barber Shop con mural chicano y cliente en capa roja"
+         fetchpriority="high"
+         decoding="async" />
+
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Barber pole micro stripe -->
+    <div class="hero-pole" aria-hidden="true"></div>
+
+    <!-- "English Spoken Here" badge -- first viewport, top-right -->
+    <div class="english-badge" aria-label="English Spoken Here">
+      English Spoken Here
+    </div>
+
+    <div class="hero-content">
+      <!-- Checkerboard motif above headline -->
+      <div class="hero-checker" aria-hidden="true">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+
+      <h1 class="hero-h1"
+          data-es="El fade que andas buscando"
+          data-en="The fade you've been looking for">
+        El fade que andas buscando
+      </h1>
+
+      <p class="hero-sub"
+         data-es="Cortes, disenos y barba. En Puerto Penasco, desde 2019."
+         data-en="Cuts, designs, and beard work. Puerto Penasco, since 2019.">
+        Cortes, disenos y barba. En Puerto Penasco, desde 2019.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="tel:6381287524" class="btn-primary"
+           data-es="Llama o visita"
+           data-en="Call or walk in">Llama o visita</a>
+
+        <span class="hero-hours-pill"
+              data-es="Lun&#8211;Sab 8 am&#8211;7 pm / Dom 8 am&#8211;4 pm"
+              data-en="Mon&#8211;Sat 8 am&#8211;7 pm / Sun 8 am&#8211;4 pm">
+          Lun&#8211;Sab 8 am&#8211;7 pm / Dom 8 am&#8211;4 pm
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About / La Historia ───────────────────────────────────────── -->
+  <section id="historia" aria-labelledby="historia-title">
+    <div class="historia-inner">
+
+      <div class="historia-text reveal">
+        <p class="section-label"
+           data-es="LA HISTORIA / OUR STORY"
+           data-en="OUR STORY / LA HISTORIA">LA HISTORIA / OUR STORY</p>
+
+        <h2 class="section-title" id="historia-title" style="margin-bottom:1.25rem;"
+            data-es="Una barberia de barrio con caracter propio"
+            data-en="A neighborhood barbershop with its own identity">
+          Una barberia de barrio con caracter propio
+        </h2>
+
+        <!-- BLOCKER 3: No em-dashes anywhere. Using en-dashes (&#8211;) or commas. -->
+        <p data-es="Cartoon's no es un salon. Es una barberia de barrio con caracter propio: murales de street art en las paredes, el mejor mascota del barrio (Johnny Bravo no te miente), y los barberos que saben lo que hacen."
+           data-en="Cartoon's isn't a salon. It's a neighborhood barbershop with its own identity: street art murals on the walls, the best mascot in the game, and barbers who know their craft.">
+          Cartoon's no es un salon. Es una barberia de barrio con caracter propio: murales de street art en las paredes, el mejor mascota del barrio (Johnny Bravo no te miente), y los barberos que saben lo que hacen.
+        </p>
+
+        <p data-es="Aqui en Cartoon llevamos desde 2019 atendiendote, compa. Walk-ins bienvenidos. Cita por telefono si prefieres."
+           data-en="We've been cutting in Puerto Penasco since 2019. Walk-ins welcome. Call ahead if you prefer.">
+          Aqui en Cartoon llevamos desde 2019 atendiendote, compa. Walk-ins bienvenidos. Cita por telefono si prefieres.
+        </p>
+
+        <span class="esh-badge-inline">English Spoken Here</span>
+      </div>
+
+      <div class="historia-photo-wrap reveal">
+        <img src="assets/exterior_1.jpg"
+             alt="Exterior de Cartoon's Barber Shop en Puerto Penasco, con poste de barbero rojo y azul"
+             width="800" height="600"
+             loading="lazy" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Checkerboard divider ───────────────────────────────────────── -->
+  <div class="checker-divider" aria-hidden="true"></div>
+
+  <!-- ── Servicios ──────────────────────────────────────────────────── -->
+  <section id="servicios" aria-labelledby="servicios-title">
+    <div class="servicios-inner">
+
+      <div class="section-header reveal">
+        <p class="section-label"
+           data-es="LO QUE HACEMOS / SERVICES"
+           data-en="SERVICES / LO QUE HACEMOS">LO QUE HACEMOS / SERVICES</p>
+        <h2 class="section-title" id="servicios-title"
+            data-es="Cortes. Fades. Disenos."
+            data-en="Cuts. Fades. Designs.">
+          Cortes. Fades. Disenos.
+        </h2>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Card 1: Corte / Haircut -->
+        <div class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M6 2v4M6 6c-1.1 0-2 .9-2 2v1c0 1.1.9 2 2 2s2-.9 2-2V8c0-1.1-.9-2-2-2z"/>
+              <path d="M18 2v4M18 6c-1.1 0-2 .9-2 2v1c0 1.1.9 2 2 2s2-.9 2-2V8c0-1.1-.9-2-2-2z"/>
+              <path d="M6 10l6 6 6-6"/>
+            </svg>
+          </div>
+          <div class="service-name"
+               data-es="Nominal"
+               data-en="Nominal">Nominal</div>
+          <p class="service-desc"
+             data-es="Corte de longitud, sin fade. Limpio y rapido."
+             data-en="Length cut, no fade. Clean and quick.">
+            Corte de longitud, sin fade. Limpio y rapido.
+          </p>
+          <p class="service-price"
+             data-es="Precios accesibles / Pregunta en tienda"
+             data-en="Affordable prices / Ask in shop">
+            Precios accesibles / Pregunta en tienda
+          </p>
+        </div>
+
+        <!-- Card 2: Fade (multi-type) -->
+        <div class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 20h16M4 16h16M8 12h12M12 8h8M16 4h4"/>
+            </svg>
+          </div>
+          <div class="service-name"
+               data-es="Fade"
+               data-en="Fade">Fade</div>
+          <ul class="service-sub-items"
+              data-es="<li>Low Fade</li><li>High Fade</li><li>Half Fade</li><li>Maturillo</li>"
+              data-en="<li>Low Fade</li><li>High Fade</li><li>Half Fade</li><li>Maturillo</li>">
+            <li>Low Fade</li>
+            <li>High Fade</li>
+            <li>Half Fade</li>
+            <li>Maturillo</li>
+          </ul>
+          <p class="service-price"
+             data-es="Precios accesibles / Pregunta en tienda"
+             data-en="Affordable prices / Ask in shop">
+            Precios accesibles / Pregunta en tienda
+          </p>
+        </div>
+
+        <!-- Card 3: Diseno -->
+        <div class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <div class="service-name"
+               data-es="Diseno"
+               data-en="Diseno">Diseno</div>
+          <p class="service-desc"
+             data-es="Geometria, estrellas, lineas. Etched into the fade. Pregunta que te queda."
+             data-en="Geometric shapes, stars, lines etched into the fade. Ask what fits your style.">
+            Geometria, estrellas, lineas. Etched into the fade. Pregunta que te queda.
+          </p>
+          <p class="service-price"
+             data-es="Precios accesibles / Pregunta en tienda"
+             data-en="Affordable prices / Ask in shop">
+            Precios accesibles / Pregunta en tienda
+          </p>
+        </div>
+
+        <!-- Card 4: Barba -->
+        <div class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C8 2 4 5 4 9v2c0 2 1 4 3 5l1 1v2h8v-2l1-1c2-1 3-3 3-5V9c0-4-4-7-8-7z"/>
+              <path d="M9 13c1 1 5 1 6 0"/>
+            </svg>
+          </div>
+          <div class="service-name"
+               data-es="Barba"
+               data-en="Beard Trim">Barba</div>
+          <p class="service-desc"
+             data-es="Perfilado, recorte, toalla caliente. La barba tambien tiene su chiste."
+             data-en="Shape-up, trim, hot towel. The beard deserves the same attention.">
+            Perfilado, recorte, toalla caliente. La barba tambien tiene su chiste.
+          </p>
+          <p class="service-price"
+             data-es="Precios accesibles / Pregunta en tienda"
+             data-en="Affordable prices / Ask in shop">
+            Precios accesibles / Pregunta en tienda
+          </p>
+        </div>
+
+        <!-- Card 5: Cejas -->
+        <div class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 9c2-3 6-4 8-4s6 1 8 4"/>
+              <path d="M4 9s1 2 4 2 4-2 4-2"/>
+              <path d="M12 9s1 2 4 2 4-2 4-2"/>
+              <line x1="12" y1="13" x2="12" y2="21"/>
+              <line x1="9" y1="18" x2="15" y2="18"/>
+            </svg>
+          </div>
+          <div class="service-name"
+               data-es="Cejas"
+               data-en="Eyebrows">Cejas</div>
+          <p class="service-desc"
+             data-es="Marcado de cejas. Detalle que hace la diferencia."
+             data-en="Lined and clean. The detail that pulls it together.">
+            Marcado de cejas. Detalle que hace la diferencia.
+          </p>
+          <p class="service-price"
+             data-es="Precios accesibles / Pregunta en tienda"
+             data-en="Affordable prices / Ask in shop">
+            Precios accesibles / Pregunta en tienda
+          </p>
+        </div>
+
+        <!-- Card 6: Ninos -->
+        <div class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+              <path d="M9 6c0 0 1-2 3-2s3 2 3 2"/>
+            </svg>
+          </div>
+          <div class="service-name"
+               data-es="Corte Ninos"
+               data-en="Kids' Cut">Corte Ninos</div>
+          <p class="service-desc"
+             data-es="Para los mas chicos. Los llevamos bien."
+             data-en="We take care of the little ones too.">
+            Para los mas chicos. Los llevamos bien.
+          </p>
+          <p class="service-price"
+             data-es="Precios accesibles / Pregunta en tienda"
+             data-en="Affordable prices / Ask in shop">
+            Precios accesibles / Pregunta en tienda
+          </p>
+        </div>
+
+      </div><!-- .services-grid -->
+
+      <p class="services-note reveal"
+         data-es="Sin reservas en linea, llamanos o visita."
+         data-en="No online booking, call or walk in.">
+        Sin reservas en linea, llamanos o visita.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ── Checkerboard divider ───────────────────────────────────────── -->
+  <div class="checker-divider" aria-hidden="true"></div>
+
+  <!-- ── El Equipo ──────────────────────────────────────────────────── -->
+  <section id="equipo" aria-labelledby="equipo-title">
+
+    <!-- Blurred interior photo as texture layer -->
+    <div class="equipo-bg" aria-hidden="true">
+      <img src="assets/interior_2.jpg"
+           alt=""
+           loading="lazy"
+           aria-hidden="true" />
+    </div>
+
+    <div class="equipo-inner">
+      <div class="section-header reveal">
+        <p class="section-label"
+           data-es="EL EQUIPO / THE TEAM"
+           data-en="THE TEAM / EL EQUIPO">EL EQUIPO / THE TEAM</p>
+        <h2 class="section-title" id="equipo-title"
+            data-es="Los barberos de Cartoon's"
+            data-en="The barbers at Cartoon's">
+          Los barberos de Cartoon's
+        </h2>
+      </div>
+
+      <div class="equipo-grid">
+
+        <!-- BARBER NAME: confirm with owner -->
+        <div class="barber-card reveal">
+          <div class="barber-avatar" aria-hidden="true">
+            <!-- Barber silhouette SVG fallback -->
+            <svg viewBox="0 0 40 40" aria-hidden="true">
+              <circle cx="20" cy="13" r="8" />
+              <path d="M6 38c0-7.7 6.3-14 14-14s14 6.3 14 14" />
+              <!-- Scissors accent -->
+              <path d="M14 10 L18 14 M26 10 L22 14 M18 14 L22 14" stroke="rgba(204,36,36,0.7)" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="barber-info">
+            <div class="barber-name"
+                 data-es="El Maestro"
+                 data-en="El Maestro">El Maestro</div>
+            <div class="barber-title"
+                 data-es="Barbero"
+                 data-en="Barber">Barbero</div>
+            <p class="barber-bio"
+               data-es="Disenos, fades y barba. Cartoon's desde 2019."
+               data-en="Designs, fades, and beard work. Cartoon's since 2019.">
+              Disenos, fades y barba. Cartoon's desde 2019.
+            </p>
+          </div>
+        </div>
+
+        <!-- BARBER NAME: confirm with owner -->
+        <div class="barber-card reveal">
+          <div class="barber-avatar" aria-hidden="true">
+            <svg viewBox="0 0 40 40" aria-hidden="true">
+              <circle cx="20" cy="13" r="8" />
+              <path d="M6 38c0-7.7 6.3-14 14-14s14 6.3 14 14" />
+              <path d="M14 10 L18 14 M26 10 L22 14 M18 14 L22 14" stroke="rgba(204,36,36,0.7)" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="barber-info">
+            <div class="barber-name"
+                 data-es="El Equipo"
+                 data-en="El Equipo">El Equipo</div>
+            <div class="barber-title"
+                 data-es="Barbero"
+                 data-en="Barber">Barbero</div>
+            <p class="barber-bio"
+               data-es="Fades limpios y cortes de precision. Walk-ins bienvenidos."
+               data-en="Clean fades and precision cuts. Walk-ins welcome.">
+              Fades limpios y cortes de precision. Walk-ins bienvenidos.
+            </p>
+          </div>
+        </div>
+
+      </div><!-- .equipo-grid -->
+    </div>
+  </section>
+
+  <!-- ── Galeria ────────────────────────────────────────────────────── -->
+  <section id="galeria" aria-labelledby="galeria-title">
+    <div class="galeria-inner">
+
+      <div class="section-header reveal">
+        <p class="section-label"
+           data-es="GALERIA / GALLERY"
+           data-en="GALLERY / GALERIA">GALERIA / GALLERY</p>
+        <h2 class="section-title" id="galeria-title"
+            data-es="El trabajo habla solo"
+            data-en="The work speaks for itself">
+          El trabajo habla solo
+        </h2>
+      </div>
+
+      <!-- BLOCKER 4: Yelp quote naming "Alan" is verbatim English -- no data-en/data-es swap on it -->
+      <!-- Gallery photos: 7 usable, style_reference_1.jpg and digital_promo_1.jpg excluded -->
+      <div class="gallery-grid">
+
+        <div class="gallery-item reveal"
+             data-caption="Mural chicano / interior de Cartoon&#39;s">
+          <img src="assets/interior_mural_1.jpg"
+               alt="Mural chicano en el interior de Cartoon's Barber Shop, cliente en capa roja"
+               loading="lazy" />
+        </div>
+
+        <div class="gallery-item reveal"
+             data-caption="Taper fade con diseno estrella / Star design fade">
+          <img src="assets/cut_diseno_1.jpg"
+               alt="Taper fade con diseno geometrico de estrella en la nuca"
+               loading="lazy" />
+        </div>
+
+        <div class="gallery-item reveal"
+             data-caption="Diseno circular en el fade / Circular design fade">
+          <img src="assets/cut_diseno_2.jpg"
+               alt="Taper fade con diseno circular geometrico"
+               loading="lazy" />
+        </div>
+
+        <div class="gallery-item reveal"
+             data-caption="Exterior / Storefront, Puerto Penasco">
+          <img src="assets/exterior_1.jpg"
+               alt="Fachada de Cartoon's Barber Shop con poste de barbero y letrero"
+               loading="lazy" />
+        </div>
+
+        <div class="gallery-item reveal"
+             data-caption="Exterior con tabla de servicios / Services board visible">
+          <img src="assets/exterior_2.jpg"
+               alt="Barbero frente al local, tabla de servicios visible en la ventana"
+               loading="lazy" />
+        </div>
+
+        <div class="gallery-item reveal"
+             data-caption="Barbero en accion / Barber at work">
+          <img src="assets/interior_2.jpg"
+               alt="Barbero trabajando en silla, letrero English Spoken Here visible al fondo"
+               loading="lazy" />
+        </div>
+
+        <div class="gallery-item reveal"
+             data-caption="Cartoon's Barber Shop, Puerto Penasco">
+          <img src="assets/staff_promo_1.jpg"
+               alt="Promo de Cartoon's Barber Shop con mural visible al fondo"
+               loading="lazy" />
+        </div>
+
+      </div><!-- .gallery-grid -->
+    </div>
+  </section>
+
+  <!-- ── Resenas / Reviews ──────────────────────────────────────────── -->
+  <section id="resenas" aria-labelledby="resenas-title">
+    <div class="resenas-inner">
+
+      <div class="section-header reveal">
+        <p class="section-label"
+           data-es="LO QUE DICEN / WHAT THEY SAY"
+           data-en="WHAT THEY SAY / LO QUE DICEN">LO QUE DICEN / WHAT THEY SAY</p>
+        <h2 class="section-title" id="resenas-title"
+            data-es="4.8 estrellas. 53 resenas."
+            data-en="4.8 stars. 53 reviews.">
+          4.8 estrellas. 53 resenas.
+        </h2>
+      </div>
+
+      <div class="reviews-scroll">
+
+        <!-- Review 1: Yelp verbatim English -- BLOCKER 4: static, no data-en/data-es swap on the quote itself -->
+        <div class="review-card reveal">
+          <div class="review-stars" aria-label="5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">
+            "Truly one of the better haircuts I've ever had. Skilled, friendly, and knows what he's doing."
+          </p>
+          <!-- Attribution uses en-dash (&#8211;) not em-dash -- BLOCKER 3 -->
+          <p class="review-attr">&#8211; Yelp customer</p>
+        </div>
+
+        <!-- Review 2: Aggregated summary, translatable -->
+        <div class="review-card reveal">
+          <div class="review-stars" aria-label="5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text"
+             data-es="&ldquo;Destacan la calidad de los cortes, la atencion personalizada y el ambiente amigable.&rdquo;"
+             data-en="&ldquo;Customers highlight the quality of the cuts, the personalized attention, and the welcoming atmosphere.&rdquo;">
+            &ldquo;Destacan la calidad de los cortes, la atencion personalizada y el ambiente amigable.&rdquo;
+          </p>
+          <p class="review-attr"
+             data-es="&#8211; dirtophair.lat"
+             data-en="&#8211; dirtophair.lat">
+            &#8211; dirtophair.lat
+          </p>
+        </div>
+
+        <!-- Review 3: Google rating card -->
+        <div class="review-card google-card reveal">
+          <div class="google-badge">
+            <!-- Google "G" icon inline SVG -->
+            <svg class="google-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+            <span class="google-rating-big">4.8</span>
+          </div>
+          <div class="review-stars" aria-label="4.8 estrellas">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <p class="review-attr"
+             data-es="53 resenas en Google"
+             data-en="53 reviews on Google">
+            53 resenas en Google
+          </p>
+        </div>
+
+      </div><!-- .reviews-scroll -->
+    </div>
+  </section>
+
+  <!-- ── Contacto ────────────────────────────────────────────────────── -->
+  <section id="contacto" aria-labelledby="contacto-title">
+    <div class="contacto-inner">
+
+      <div class="contact-info reveal">
+        <p class="section-label"
+           data-es="CONTACTO / CONTACT"
+           data-en="CONTACT / CONTACTO">CONTACTO / CONTACT</p>
+
+        <h2 class="section-title" id="contacto-title" style="margin-bottom:1.25rem;"
+            data-es="Visitanos o llamanos"
+            data-en="Visit us or give us a call">
+          Visitanos o llamanos
+        </h2>
+
+        <!-- Hours table -->
+        <table class="hours-table" aria-label="Horario">
+          <tbody>
+            <tr>
+              <td data-es="Lun &#8211; Sab" data-en="Mon &#8211; Sat">Lun &#8211; Sab</td>
+              <td>8:00 am &#8211; 7:00 pm</td>
+            </tr>
+            <tr>
+              <td data-es="Domingo" data-en="Sunday">Domingo</td>
+              <td>8:00 am &#8211; 4:00 pm</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Phone -->
+        <a href="tel:6381287524" class="contact-phone" aria-label="Llamar al 638 128 7524">
+          638 128 7524
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/6381287524" class="btn-whatsapp" target="_blank" rel="noopener noreferrer"
+           aria-label="WhatsApp 638 128 7524">
+          <svg class="icon-whatsapp" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M11.97 0C5.364 0 0 5.363 0 11.97c0 2.096.548 4.07 1.504 5.786L.057 23.943l6.322-1.658A11.913 11.913 0 0011.97 23.94C18.576 23.94 24 18.577 24 11.97 24 5.364 18.576 0 11.97 0zm0 21.86a9.878 9.878 0 01-5.031-1.373l-.362-.214-3.747.983.999-3.648-.233-.373A9.862 9.862 0 012.107 11.97c0-5.445 4.42-9.863 9.863-9.863 5.445 0 9.862 4.418 9.862 9.863 0 5.444-4.417 9.89-9.862 9.89z"/>
+          </svg>
+          WhatsApp
+        </a>
+
+        <!-- Address -->
+        <div class="contact-address">
+          <strong>C. No Reeleccion 259, Centro</strong>
+          Puerto Penasco, Sonora, Mexico
+        </div>
+
+        <!-- English badge repeated for tourists -->
+        <div class="esh-badge-contact">English Spoken Here</div>
+
+        <p class="contact-note"
+           data-es="Sin reservas en linea / Walk-ins y telefono unicamente"
+           data-en="No online booking / Walk-ins and phone only">
+          Sin reservas en linea / Walk-ins y telefono unicamente
+        </p>
+
+        <div class="contact-cta-row">
+          <a href="tel:6381287524" class="btn-primary"
+             data-es="Llama Ahora"
+             data-en="Call Now">Llama Ahora</a>
+        </div>
+      </div><!-- .contact-info -->
+
+      <!-- Map -->
+      <div class="contact-map reveal">
+        <iframe
+          title="Cartoon's Barber Shop en Google Maps"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.9!2d-113.542!3d31.301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3AChIJc82Xf5alK4ER-_jLB5XSJUw!2sCartoon%27s+Barber+Shop!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          aria-label="Mapa de Cartoon's Barber Shop, C. No Reeleccion 259, Puerto Penasco">
+        </iframe>
+      </div>
+
+    </div><!-- .contacto-inner -->
+  </section>
+
+  <!-- ── Checkerboard divider before footer ─────────────────────────── -->
+  <div class="checker-divider" aria-hidden="true"></div>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div class="footer-logo">
+          <a href="#hero" aria-label="Cartoon's Barber Shop inicio">
+            <img src="assets/logo.jpg"
+                 alt="Cartoon's Barber Shop"
+                 width="120" height="auto"
+                 loading="lazy" />
+          </a>
+        </div>
+
+        <div class="footer-details">
+          <p class="footer-tagline"
+             data-es="Cortate el cabello."
+             data-en="Get your cut.">
+            Cortate el cabello.
+          </p>
+          <p class="footer-hours"
+             data-es="Lun &#8211; Sab: 8 am &#8211; 7 pm &nbsp;|&nbsp; Dom: 8 am &#8211; 4 pm"
+             data-en="Mon &#8211; Sat: 8 am &#8211; 7 pm &nbsp;|&nbsp; Sun: 8 am &#8211; 4 pm">
+            Lun &#8211; Sab: 8 am &#8211; 7 pm &nbsp;|&nbsp; Dom: 8 am &#8211; 4 pm
+          </p>
+          <a href="tel:6381287524" class="footer-phone">638 128 7524</a>
+        </div>
+
+        <div class="footer-links">
+          <a href="https://www.facebook.com/CartoonBarbershop"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Cartoon's Barber Shop en Facebook">
+            Facebook
+          </a>
+        </div>
+
+      </div><!-- .footer-top -->
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2026 Cartoon's Barber Shop. C. No Reeleccion 259, Puerto Penasco, Sonora.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
