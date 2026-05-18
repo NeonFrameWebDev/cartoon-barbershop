@@ -381,13 +381,11 @@ nav {
   /* Mild parallax on desktop via JS/fixed -- disabled on mobile for perf */
 }
 
-@media (min-width: 1024px) {
-  .hero-img {
-    position: fixed;
-    /* parallax is achieved by keeping image fixed and letting content scroll */
-  }
-  #hero { background: none; }
-}
+/* Note: a previous build set .hero-img { position: fixed } on desktop to
+   create a parallax effect. That caused the image to stay glued to the
+   viewport as the user scrolled into team/gallery/contact, bleeding through
+   their dark backgrounds and looking like the hero was stuck on screen.
+   Removed 2026-05-18. Hero now scrolls naturally inside its own section. */
 
 .hero-overlay {
   position: absolute;
