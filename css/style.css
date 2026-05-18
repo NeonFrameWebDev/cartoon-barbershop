@@ -318,6 +318,11 @@ nav {
   .nav-links { display: flex; }
   .nav-hamburger { display: none; }
   .nav-cta { display: block; }
+  /* Hard-hide the mobile drawer at desktop sizes. Without this, if the
+     `.open` class is left on the drawer (e.g., user opens it then resizes
+     the window wider), the drawer items render as duplicate nav links
+     stacked below the real nav bar. */
+  .nav-drawer { display: none !important; }
 }
 
 @media (max-width: 767px) {
